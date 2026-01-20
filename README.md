@@ -1,50 +1,151 @@
-# Welcome to your Expo app 👋
+# Vixel
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Every pixel tells a story**
 
-## Get started
+A wallpaper app that doesn't suck. Built because I wanted something simple, fast, and beautiful to find wallpapers without the usual bloat.
 
-1. Install dependencies
+## What's This?
 
-   ```bash
-   npm install
-   ```
+Vixel is a React Native app that pulls stunning wallpapers from Pexels. No ads, no weird permissions, no nonsense. Just wallpapers.
 
-2. Start the app
+You can search, filter, browse categories, and download whatever catches your eye. That's it.
 
-   ```bash
-   npx expo start
-   ```
+## Screenshots
 
-In the output, you'll find options to open the app in a
+Coming soon (or just run the app, it's faster)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Why I Built This
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+I got tired of wallpaper apps that:
+- Asked for 47 permissions
+- Had more ads than wallpapers
+- Took 5 taps to download one image
+- Looked like they were designed in 2012
 
-## Get a fresh project
+So here we are.
 
-When you're ready, run:
+## Features
 
+**The basics:**
+- Search for literally anything
+- Browse by categories (Nature, Cities, Space, etc.)
+- Download wallpapers to your phone
+- Share them with friends
+
+**The nice-to-haves:**
+- Filter by color (because sometimes you just want blue wallpapers)
+- Filter by orientation (landscape, portrait, square)
+- Sort by popular or latest
+- Infinite scroll (because pagination is annoying)
+- Pull to refresh (because why not)
+- Full-screen previews
+- Actually works offline (sort of - cached images will still show)
+
+**The UI stuff:**
+- Dark mode (only mode, actually)
+- Smooth animations
+- Doesn't feel laggy
+- Clean, minimal interface
+
+## Getting Started
+
+You'll need Node.js and Expo CLI installed. If you don't have them, Google is your friend.
+
+**Clone and install:**
 ```bash
-npm run reset-project
+git clone https://github.com/KaiserOfTheNight/Vixel-Photo-Search-Share-App
+cd vixel
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**Get a Pexels API key:**
+1. Go to https://www.pexels.com/api/
+2. Sign up (it's free)
+3. Copy your API key
 
-## Learn more
+**Add your API key:**
 
-To learn more about developing your project with Expo, look at the following resources:
+Create a `.env` file in the root folder:
+```env
+API_KEY=your_pexels_api_key_here
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**Run it:**
+```bash
+npx expo start
+```
 
-## Join the community
+Then press `i` for iOS or `a` for Android. Or scan the QR code with Expo Go if you're testing on a real device.
 
-Join our community of developers creating universal apps.
+## How It Works
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Pretty straightforward:
+- Welcome screen shows rotating wallpapers to get you hyped
+- Main screen shows a grid of wallpapers
+- Tap one to see it full screen
+- Download or share from there
+- Use filters if you're picky
+
+## Project Structure
+
+```
+vixel/
+├── app/
+│   ├── _layout.jsx       # Navigation setup
+│   ├── index.jsx         # Welcome screen
+│   └── home.jsx          # Main app (where the magic happens)
+├── .env                  # Your API key goes here
+└── package.json          # Dependencies
+```
+
+Nothing fancy. Just clean code organized in a way that makes sense.
+
+## Tech Stack
+
+- React Native (obviously)
+- Expo (because I'm not a masochist)
+- Pexels API (for the wallpapers)
+- A bunch of Expo packages for stuff like file system, sharing, etc.
+
+Full dependency list is in `package.json` if you care about that kind of thing.
+
+## API Limits
+
+Pexels free tier gives you:
+- 200 requests/hour
+- 20,000 requests/month
+
+More than enough for personal use. If you're planning to release this publicly, you might want to upgrade or implement some caching.
+
+## Known Issues
+
+- None that I know of, but I'm sure you'll find some
+- If you do, open an issue or fix it yourself and send a PR
+
+## Future Ideas (Maybe)
+
+- Favorites/Collections
+- Set wallpaper directly from the app
+- Daily wallpaper notifications
+- More filter options
+- Whatever else sounds fun
+
+## Contributing
+
+Sure, why not. Fork it, make it better, send a PR. Just keep the code clean and the commits meaningful.
+
+## License
+
+MIT License - do whatever you want with it. Copy it, modify it, sell it, I don't care. Just don't blame me if something breaks.
+
+## Credits
+
+Thanks to Pexels for the free API and the photographers who upload their work there. You're the real MVPs.
+
+Built with Expo because life's too short to deal with native builds for a side project.
+
+---
+
+Built by a human who likes nice wallpapers and clean code.
+
+*P.S. - If you actually read this whole README, you're either really interested or really bored. Either way, hope the app works for you.*
